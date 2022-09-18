@@ -5,7 +5,14 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      gridTemplateColumns: {
+        "two": 'repeat(2, minmax(0, 1fr)',
+      }
+    },
+    fontFamily: {
+      "monument": ['MonumentExtended']
+    }
   },
   plugins: [],
 }

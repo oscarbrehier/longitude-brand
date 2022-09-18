@@ -39,7 +39,7 @@ export default function Home() {
 			</Head>
 			<div className='h-auto w-full relative'>
             
-				<comps.Navbar/>
+				<comps.Navbar position={'absolute'}/>
 				<comps.Preview/>
 
 			</div>

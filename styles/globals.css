@@ -9,3 +9,19 @@
 *:focus {
     outline: none;
 }
+
+.grid-2 {
+    grid-template-columns: repeat(2);
+}
+
+@font-face {
+    font-family: 'MonumentExtended';
+    src: url('../assets/fonts/MonumentExtended/MonumentExtended-Regular.otf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'MonumentExtended';
+    src: url('../assets/fonts/MonumentExtended/MonumentExtended-Ultrabold.otf');
+    font-weight: 800;
+}
