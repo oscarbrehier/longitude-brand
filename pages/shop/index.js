@@ -10,6 +10,7 @@ export default function Shop() {
                 <comps.ListItem picture={'/t001.jpg'}/>
                 <comps.ListItem picture={'/t002.jpg'}/>
                 <comps.ListItem picture={'/t003.jpg'}/>
+                <comps.ListItem picture={'/t004.jpg'}/>
                 <comps.Footer />
             </div>
         </div>
