@@ -44,7 +44,7 @@ export default function Home() {
 					<comps.Preview />
 				</div>
 
-				<div className='h-screen w-full bg-black flex items-center justify-center flex-col space-y-20'>
+				<div className='h-screen w-full bg-black flex items-center justify-center flex-col space-y-16'>
 					<img className='h-[60vh]' src="/preview.png" alt="" />
 					<a href=""><div className='h-10 w-60 rounded-lg bg-[#f22a9b] flex items-center justify-center'>
 						<p className='font-monument text-white uppercase'>Boutique</p>
