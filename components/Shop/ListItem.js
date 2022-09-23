@@ -3,8 +3,8 @@ export default function ListItem({picture}) {
     return (
 
         <section className='w-full md:h-[72vh] h-auto flex md:flex-row flex-col justify-center'>
-            <div className='h-[inherit] w-auto'>
-                <img className='h-[inherit]' src={picture} alt="" />
+            <div className='h-[inherit] w-auto flex justify-center'>
+                <img className='sm:h-[inherit] max-h-[60vh]' src={picture} alt="" />
             </div>
             <div className='h-[inherit] md:w-[30%] w-full flex items-center md:justify-start justify-center'>
                 <div className='flex flex-col items-center'>

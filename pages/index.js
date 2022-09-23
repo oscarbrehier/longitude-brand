@@ -39,8 +39,17 @@ export default function Home() {
 			</Head>
 			<div className='h-auto w-full relative'>
             
-				<comps.Navbar position={'absolute'}/>
-				<comps.Preview/>
+				<div className='hidden md:block'>
+					<comps.Navbar position={'absolute'} color='-white'/>
+					<comps.Preview />
+				</div>
+
+				<div className='h-screen w-full bg-black flex items-center justify-center flex-col space-y-20'>
+					<img className='h-[60vh]' src="/preview.png" alt="" />
+					<a href=""><div className='h-10 w-60 rounded-lg bg-[#f22a9b] flex items-center justify-center'>
+						<p className='font-monument text-white uppercase'>Boutique</p>
+					</div></a>
+				</div>
 
 			</div>
 		</div>
