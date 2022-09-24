@@ -1,4 +1,4 @@
-import * as comps from '../components/Components'
+import Link from 'next/link';
 
 export default function Preview() {
 
@@ -9,7 +9,7 @@ export default function Preview() {
             <div className='h-screen w-full flex flex-col justify-center items-center space-y-16'>
                 <img className='h-[80vh]' src="/preview.png" alt=""/>
                 <div className='w-full flex justify-center space-x-4'>
-                    <a href="/shop">
+                    <Link href="/shop">
                         <div className='
                             h-10 w-60 rounded-lg 
                             hover:bg-[#f22a9b9d] hover:text-white text-black bg-[#00000009] 
@@ -17,11 +17,11 @@ export default function Preview() {
                             transition duration-700'>
                             <p className='font-monument uppercase'>About</p>
                         </div>
-                    </a>
-                    <a href="/shop"><div className='h-10 w-60 rounded-lg bg-[#f22a9b] flex items-center justify-center'>
+                    </Link>
+                    <Link href="/shop"><div className='h-10 w-60 rounded-lg bg-[#f22a9b] flex items-center justify-center'>
 						<p className='font-monument text-white uppercase'>Boutique</p>
-                    </div></a>
-                    <a href="/shop">
+                    </div></Link>
+                    <Link href="/shop">
                         <div className='
                             h-10 w-60 rounded-lg 
                             hover:bg-[#f22a9b9d] hover:text-white text-black bg-[#00000009] 
@@ -29,7 +29,7 @@ export default function Preview() {
                             transition duration-700'>
                             <p className='font-monument uppercase'>Contact</p>
                         </div>
-                    </a>
+                    </Link>
                 </div>
             </div>
         </section>
