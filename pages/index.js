@@ -40,11 +40,11 @@ export default function Home() {
 			<div className='h-auto w-full relative'>
             
 				<div className='hidden md:block'>
-					<comps.Navbar position={'absolute'} color='-white'/>
+					{/* <comps.Navbar position={'absolute'} color='-white'/> */}
 					<comps.Preview />
 				</div>
 
-				<div className='h-screen w-full bg-black flex items-center justify-center flex-col space-y-16'>
+				<div className='h-screen w-full bg-black flex items-center justify-center flex-col space-y-16 md:hidden'>
 					<img className='h-[60vh]' src="/preview.png" alt="" />
 					<a href=""><div className='h-10 w-60 rounded-lg bg-[#f22a9b] flex items-center justify-center'>
 						<p className='font-monument text-white uppercase'>Boutique</p>
