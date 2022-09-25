@@ -1,21 +1,11 @@
 import Link from 'next/link';
 import client from '../pages/api/client';
 
-export const getStaticProps = async () => {
+export default function Preview({ img }) {
 
-    const res = await client.fetch(``);
-
-    return {
-        props: {
-            res
-        }
-    }
-
-};
-
-export default function Preview({ res }) {
-
-    console.log(res);
+    const image = img[0].image.asset._ref;
+    const base = 'https://cdn.sanity.io/images/7mbpaot7/prod/';
+    img['image_url'] = base + image.slice(6).replace('-png', '.png');
 
     return (
 
@@ -23,27 +13,27 @@ export default function Preview({ res }) {
 
             <div className='h-screen w-full flex flex-col justify-center items-center space-y-16'>
 
-                <img className='h-[80vh]' src="/preview.png" alt=""/>
+                <img className='h-[80vh]' src={img.image_url} alt=""/>
 
                 <div className='w-full flex justify-center space-x-4'>
                     <Link href="/shop">
-                        <div className='
+                        <div className={`
                             h-10 w-60 rounded-lg 
-                            hover:bg-[#f22a9b9d] hover:text-white text-black bg-[#00000009] 
+                            hover:bg-[#${img[0].secondary_color}] hover:text-white text-black bg-[#00000009] 
                             flex items-center justify-center 
-                            transition duration-700'>
+                            transition duration-700 cursor-pointer`}>
                             <p className='font-monument uppercase'>About</p>
                         </div>
                     </Link>
-                    <Link href="/shop"><div className='h-10 w-60 rounded-lg bg-[#f22a9b] flex items-center justify-center'>
+                    <Link href="/shop"><div className={`h-10 w-60 rounded-lg bg-[#${img[0].primary_color}] flex items-center justify-center  cursor-pointer`}>
 						<p className='font-monument text-white uppercase'>Boutique</p>
                     </div></Link>
                     <Link href="/shop">
-                        <div className='
+                        <div className={`
                             h-10 w-60 rounded-lg 
-                            hover:bg-[#f22a9b9d] hover:text-white text-black bg-[#00000009] 
+                            hover:bg-[#${img[0].secondary_color}] hover:text-white text-black bg-[#00000009] 
                             flex items-center justify-center 
-                            transition duration-700'>
+                            transition duration-700 cursor-pointer`}>
                             <p className='font-monument uppercase'>Contact</p>
                         </div>
                     </Link>

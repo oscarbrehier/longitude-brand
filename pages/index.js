@@ -1,10 +1,24 @@
 import * as comps from '../components/Components';
-import Head from 'next/head';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
+import client from './api/client';
 import meta from '../lib/meta';
+import Head from 'next/head';
 
-export default function Home() {
+export const getStaticProps = async () => {
 
+    const img = await client.fetch('*[_type == "Front"]');
+
+    return {
+        props: {
+            img
+        }
+    }
+
+};
+
+export default function Home({ img }) {
+	
 	const router = useRouter();
 
 	return (
@@ -41,14 +55,14 @@ export default function Home() {
             
 				<div className='hidden md:block'>
 					{/* <comps.Navbar position={'absolute'} color='-white'/> */}
-					<comps.Preview />
+					<comps.Preview img={img} />
 				</div>
 
 				<div className='h-screen w-full bg-black flex items-center justify-center flex-col space-y-16 md:hidden'>
-					<img className='h-[60vh]' src="/preview.png" alt="" />
-					<a href=""><div className='h-10 w-60 rounded-lg bg-[#f22a9b] flex items-center justify-center'>
+					<img className='max-h-[60vh]' src="/preview.png" alt="" />
+					<Link href="/shop"><div className='h-10 w-60 rounded-lg bg-[#f22a9b] flex items-center justify-center'>
 						<p className='font-monument text-white uppercase'>Boutique</p>
-					</div></a>
+					</div></Link>
 				</div>
 
 			</div>
