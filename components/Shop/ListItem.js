@@ -2,7 +2,7 @@ export default function ListItem({name, description, picture}) {
 
     return (
 
-        <section className={`w-full h-screen md:flex-row flex-col justify-center ${!picture ? 'hidden' : 'flex'}`}>
+        <section className={`w-full h-screen md:flex-row flex-col justify-center flex`}>
             <div className='md:h-[inherit] h-auto w-auto flex md:items-center justify-center'>
                 <img className='sm:h-[inherit] max-h-[60vh]' src={picture} alt="" />
             </div>

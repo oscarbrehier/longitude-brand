@@ -1,13 +1,30 @@
 import Link from 'next/link';
+import client from '../pages/api/client';
 
-export default function Preview() {
+export const getStaticProps = async () => {
+
+    const res = await client.fetch(``);
+
+    return {
+        props: {
+            res
+        }
+    }
+
+};
+
+export default function Preview({ res }) {
+
+    console.log(res);
 
     return (
 
         <section className="absolute w-full h-auto flex items-center flex-col">
 
             <div className='h-screen w-full flex flex-col justify-center items-center space-y-16'>
+
                 <img className='h-[80vh]' src="/preview.png" alt=""/>
+
                 <div className='w-full flex justify-center space-x-4'>
                     <Link href="/shop">
                         <div className='

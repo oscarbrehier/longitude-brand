@@ -1,31 +1,38 @@
 import * as comps from '../../components/Components';
+import client from '../api/client';
 
 export const getStaticProps = async () => {
 
-    const res = await fetch('https://oqhgpxi6.api.sanity.io/v2021-06-07/data/query/longitude?query=*');
-    const data = await res.json();
+    const res = await client.fetch('*[_type == "shopitem"]');
 
     return {
         props: {
-            items: data.result
-        },
+            res
+        }
     }
 
 };
 
-export default function Shop({ items }) {
+export default function Shop({ res }) {
+
+    const data = [];
+
+    res.map((item) => {
+
+        const img = item.image.asset._ref;
+        const base = 'https://cdn.sanity.io/images/7mbpaot7/prod/';
+        item['image_url'] = base + img.slice(6).replace('-jpg', '.jpg');
+        data.push(item);
+
+    })
 
     return (
 
         <div className='relative'>
             <comps.Navbar position={'absolute'} />
             <div className='h-auto w-full absolute mt-10'>
-                <comps.ListItem picture={'/t001.jpg'} />
-                <comps.ListItem picture={'/t002.jpg'} />
-                <comps.ListItem picture={'/t003.jpg'} />
-                <comps.ListItem picture={'/t004.jpg'} />
-                {items.map((item) => (
-                    <comps.ListItem key={Math.random()} picture={item.url} />
+                {data.map((d) => (
+                    <comps.ListItem key={Math.random()} picture={d.image_url} name={d.name} description={d.short_description} />
                 ))}
                 <comps.Footer />
             </div>
