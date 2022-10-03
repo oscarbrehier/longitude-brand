@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import client from '../pages/api/client';
 
 export default function Preview({ img }) {
 

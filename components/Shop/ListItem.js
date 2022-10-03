@@ -1,4 +1,6 @@
-export default function ListItem({name, description, picture}) {
+import Link from "next/link";
+
+export default function ListItem({name, description, picture, link}) {
 
     return (
 
@@ -12,12 +14,12 @@ export default function ListItem({name, description, picture}) {
                     <p className='w-[80%] md:block hidden'>
                         {description}
                     </p>
-                    <div className='md:w-[80%] w-full mt-4 md:block flex justify-center'>
-                        <a href="">
+                    <div className='md:w-[80%] w-full mt-4 md:block flex justify-center cursor-pointer'>
+                        <Link href={`/shop/product/${link}`}>
                             <div className='h-10 w-20 bg-black flex items-center justify-center rounded-lg'>
                                 <p className='text-white font-monument font-extrabold'>+</p>
                             </div>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

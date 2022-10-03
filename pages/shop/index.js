@@ -32,7 +32,7 @@ export default function Shop({ res }) {
             <comps.Navbar position={'absolute'} />
             <div className='h-auto w-full absolute mt-10'>
                 {data.map((d) => (
-                    <comps.ListItem key={Math.random()} picture={d.image_url} name={d.name} description={d.short_description} />
+                    <comps.ListItem key={Math.random()} picture={d.image_url} name={d.name} description={d.short_description} link={d._id} />
                 ))}
                 <comps.Footer />
             </div>

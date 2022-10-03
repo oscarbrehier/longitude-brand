@@ -8,7 +8,7 @@ export default function Navbar({position, color}) {
 
         <div className={`h-auto w-full z-20 ` + position}>
             <div className='mt-10 sm:h-32 h-20  flex justify-center'>
-                <img src='logo.png' className='h-[inherit]' alt="logo" />    
+                <img src='/logo.png' className='h-[inherit]' alt="logo" />    
 			</div>
             <nav className="sm:mt-4 mt-5 w-auto flex justify-center">
                 <ul className="flex flex-row space-x-4 uppercase cursor-pointer">
