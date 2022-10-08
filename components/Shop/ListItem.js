@@ -6,7 +6,7 @@ export default function ListItem({name, description, picture, link}) {
 
         <section className={`w-full h-screen md:flex-row flex-col justify-center flex`}>
             <div className='md:h-[inherit] h-auto w-auto flex md:items-center justify-center'>
-                <img className='sm:h-[inherit] max-h-[60vh]' src={picture} alt="" />
+                <img className='sm:h-[inherit] max-h-[70vh]' src={picture} alt="" />
             </div>
             <div className='md:h-[inherit] h-auto md:w-[30%] w-full flex items-center md:justify-start justify-center'>
                 <div className='flex flex-col items-center'>

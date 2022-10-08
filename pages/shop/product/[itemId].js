@@ -12,6 +12,11 @@ export const getServerSideProps = async ({ params }) => {
 
     }
 
+    const base = 'https://cdn.sanity.io/images/7mbpaot7/prod/';
+
+    const img = res[0].image_transparent.asset._ref;
+    res[0]['image_url'] = base + img.slice(6).replace('-png', '.png');
+
     return {
         props: {
             res
@@ -22,13 +27,9 @@ export const getServerSideProps = async ({ params }) => {
 
 const ProductDetail = ({ res }) => {
 
-    const img = res[0].image_transparent.asset._ref;
-    const base = 'https://cdn.sanity.io/images/7mbpaot7/prod/';
-    res[0]['image_url'] = base + img.slice(6).replace('-png', '.png');
-
     return (
 
-        <div className="bg-[url('/mockup_designs/design.png')] bg-cover bg-center py-10">
+        <div className={`py-10`}>
             <comps.Navbar position={''} />
             <section className="h-auto w-full">
                 <div className="w-full flex justify-center">

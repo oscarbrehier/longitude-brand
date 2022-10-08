@@ -1,6 +1,4 @@
 import Link from 'next/link';
-import { useEffect } from 'react';
-import useDarkMode from '../hooks/useDarkMode';
 
 export default function Navbar({position, color}) {
 
@@ -14,8 +12,8 @@ export default function Navbar({position, color}) {
                 <ul className="flex flex-row space-x-4 uppercase cursor-pointer">
                     <li><Link href='/'>Acceuil</Link></li>
                     <li><Link href='/shop'>Boutique</Link></li>
-                    <li>Contact</li>
-                    <li>A propos</li>
+                    <li><Link href='contact'>Contact</Link></li>
+                    <li><Link href="/a-propos">A propos</Link></li>
                 </ul>
             </nav>
         </div>
