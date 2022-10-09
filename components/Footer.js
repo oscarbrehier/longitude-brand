@@ -2,7 +2,7 @@ export default function Footer() {
 
     return (
 
-        <footer className="h-auto w-full my-8 flex flex-col items-center">
+        <footer className="h-auto w-full my-8 flex flex-col items-center font-courrier">
 
             <div className="w-full h-24 flex justify-center">
                 <img className="h-[inherit]" src='/footer001.png' alt="" />

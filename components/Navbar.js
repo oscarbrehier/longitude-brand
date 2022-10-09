@@ -1,11 +1,13 @@
 import Link from 'next/link';
 
-export default function Navbar({position, color}) {
+export default function Navbar({position, color, top}) {
+
+    if(!top) top = 'mt-10'
 
     return (
 
-        <div className={`h-auto w-full z-20 ` + position}>
-            <div className='mt-10 sm:h-32 h-20  flex justify-center'>
+        <div className={`h-auto w-full z-20 font-courrier ` + position}>
+            <div className={`sm:h-32 h-20  flex justify-center ` + top}>
                 <img src='/logo.png' className='h-[inherit]' alt="logo" />    
 			</div>
             <nav className="sm:mt-4 mt-5 w-auto flex justify-center">

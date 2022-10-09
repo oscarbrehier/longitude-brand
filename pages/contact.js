@@ -4,7 +4,7 @@ export default function Contact() {
 
     return (
 
-        <div className='h-screen flex flex-col justify-between'>
+        <div className='h-screen flex flex-col justify-between font-courrier'>
             <comps.Navbar/>  
             <div className=' flex items-center justify-center'>
                 <form action="" className='space-y-4'>

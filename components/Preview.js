@@ -21,7 +21,7 @@ export default function Preview({ img }) {
                             hover:bg-[#${img[0].secondary_color}] hover:text-white text-black bg-[#00000009] 
                             flex items-center justify-center 
                             transition duration-700 cursor-pointer`}>
-                            <p className='font-monument uppercase'>About</p>
+                            <p className='font-monument uppercase'>A propos</p>
                         </div>
                     </Link>
                     <Link href="/shop"><div className={`h-10 w-60 rounded-lg bg-[#${img[0].primary_color}] flex items-center justify-center  cursor-pointer`}>

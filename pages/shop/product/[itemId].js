@@ -37,7 +37,7 @@ const ProductDetail = ({ res }) => {
                 </div>
                 <div className="w-full flex items-center flex-col mb-24 space-y-4">
                     <h1 className="font-monument text-5xl">{res[0].name}</h1>
-                    <p className="w-1/4 text-center">{res[0].description}</p>
+                    <p className="w-1/4 text-center font-courrier">{res[0].description}</p>
                 </div>
             </section>
             <comps.Footer/>

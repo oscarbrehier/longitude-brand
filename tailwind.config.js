@@ -12,7 +12,8 @@ module.exports = {
       }
     },
     fontFamily: {
-      "monument": ['MonumentExtended']
+      "monument": ['MonumentExtended'],
+      "courrier": ['Courier New']
     }
   },
   plugins: [],
