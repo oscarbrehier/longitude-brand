@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import * as comps from '../../../components/Components';
 import client from "../../api/client";
+import { useState } from "react";
 
 export const getServerSideProps = async ({ params }) => {
 
@@ -26,6 +27,28 @@ export const getServerSideProps = async ({ params }) => {
 }
 
 const ProductDetail = ({ res }) => {
+    
+    const prx = 12.3;
+
+    function round(value, precision) {
+        var multiplier = Math.pow(10, precision || 0);
+        return Math.round(value * multiplier) / multiplier;
+    }
+
+    const [count, setCount] = useState(1);
+    const [price, setPrice] = useState(prx);
+
+    const handleClick = (e, a) => {
+
+        a == true 
+        ? setCount(count + 1)
+        : setCount(count -1 <= 0 ? count : count - 1);
+
+        a == true 
+        ? setPrice(round(price + prx, 1))
+        : setPrice(round(price - prx <= 0 ? price : price - prx, 1));
+
+    }
 
     return (
 
@@ -35,9 +58,28 @@ const ProductDetail = ({ res }) => {
                 <div className="w-full flex justify-center">
                     <img className="max-w-[60%]" src={res[0].image_url} alt="" /> {/* bg-opacity 24% */}
                 </div>
-                <div className="w-full flex items-center flex-col mb-24 space-y-4">
+                <div className="w-full flex items-center flex-col space-y-4">
                     <h1 className="font-monument text-5xl">{res[0].name}</h1>
                     <p className="w-1/4 text-center font-courrier">{res[0].description}</p>
+                </div>
+                <div className="w-full flex justify-center items-center my-24 space-x-4">
+                    <div className={`h-16 w-auto rounded-full border-black border-2`}>
+                        <h1 className={`w-auto font-monument uppercase text-3xl h-[inherit] flex items-center justify-center px-5 select-none`}>
+                            <span className="cursor-pointer" onClick={(e) => handleClick(e, false)}>-</span> 
+                            &nbsp;{count}&nbsp; 
+                            <span className="cursor-pointer" onClick={(e) => handleClick(e, true)}>+</span>
+                        </h1>
+                    </div>
+                    <div className={`h-16 w-auto rounded-full border-black border-2 select-none`}>
+                        <h1 className={`w-auto font-monument uppercase text-3xl h-[inherit] flex items-center justify-center px-5`}>
+                            { price } euros
+                        </h1>
+                    </div>
+                    <div className={`h-16 w-auto rounded-full border-black bg-black border-2 cursor-pointer select-none`}>
+                        <h1 className={`w-auto font-monument uppercase text-3xl h-[inherit] flex items-center justify-center px-5 text-white`}>
+                            + panier +
+                        </h1>
+                    </div>
                 </div>
             </section>
             <comps.Footer/>
